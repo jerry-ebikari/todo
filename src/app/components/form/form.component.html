@@ -1,0 +1,58 @@
+<h2 class="ui center aligned header">Add Task</h2>
+<form class="ui form container" [formGroup]="form">
+  <!-- Title field -->
+  <div
+    class="field"
+    [class.error]="form.get('title').touched && form.get('title').invalid"
+  >
+    <label for="title">Task Title</label>
+    <input type="text" placeholder="Title" formControlName="title" />
+    <!-- Title field error message -->
+    <small *ngIf="form.get('title').touched && form.get('title').invalid"
+      >Title is required</small
+    >
+  </div>
+
+  <!-- Description field -->
+  <div
+    class="field"
+    [class.error]="
+      (form.get('description').invalid &&
+        form.get('description').errors['maxWords']) ||
+      (form.get('description').touched && form.get('description').invalid)
+    "
+  >
+    <label for="desc">Task Description</label>
+    <textarea
+      placeholder="Description"
+      formControlName="description"
+    ></textarea>
+    <p>
+      {{ wordCount }}/15
+      <!-- Description field error area -->
+    </p>
+
+    <div
+      *ngIf="
+        (form.get('description').invalid &&
+          form.get('description').errors['maxWords']) ||
+        (form.get('description').touched && form.get('description').invalid)
+      "
+    >
+      <small *ngIf="form.get('description').errors['required']"
+        >Description is required</small
+      >
+      <small *ngIf="form.get('description').errors['maxWords']"
+        >Description must not be more than 15 words</small
+      >
+    </div>
+  </div>
+  <button
+    class="ui primary button"
+    [disabled]="form.invalid"
+    (click)="addTask()"
+  >
+    Add task
+  </button>
+  <!-- list category components -->
+</form>

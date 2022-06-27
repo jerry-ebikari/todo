@@ -1,0 +1,10 @@
+/* Add application styles & imports to this file! */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 30px;
+  background-color: #e2d5e6;
+  background-image: linear-gradient(315deg, #e2d5e6 0%, #e1d4e6 74%);
+}

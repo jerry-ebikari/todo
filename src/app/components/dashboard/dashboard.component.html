@@ -1,0 +1,31 @@
+<div class="ui container">
+  <h2>Dashboard</h2>
+  <div id="dashboard" cdkDropListGroup>
+    <list-category-component
+      class="category"
+      color="yellow"
+      category="New"
+      [items]="newList"
+    ></list-category-component>
+    <list-category-component
+      class="category"
+      color="blue"
+      category="Ongoing"
+      [items]="ongoingList"
+    ></list-category-component>
+    <list-category-component
+      class="category"
+      color="green"
+      category="Done"
+      [items]="doneList"
+    ></list-category-component>
+  </div>
+  <button
+    id="add-button"
+    class="ui circular pink button"
+    routerLink="create"
+    cdkDrag
+  >
+    +
+  </button>
+</div>

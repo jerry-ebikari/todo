@@ -1,0 +1,35 @@
+<div
+  class="ui segment category"
+  [class.green]="color == 'green'"
+  [class.blue]="color == 'blue'"
+  [class.yellow]="color == 'yellow'"
+>
+  <h2 class="ui center aligned header">{{ category }}</h2>
+  <!-- Item container -->
+  <div
+    cdkDropList
+    [cdkDropListData]="items"
+    class="content-list ui segments"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <!-- Items -->
+    <div
+      class="ui card segment"
+      *ngFor="let item of items; let i = index"
+      cdkDrag
+    >
+      <div class="content ui raised segment">
+        <div class="header" id="header">
+          <p id="title">{{ item.title }}</p>
+          <div>
+            <!-- <button class="ui mini basic green button">&#9998;</button> -->
+            <button class="ui mini basic pink button" (click)="delete(i)">
+              X
+            </button>
+          </div>
+        </div>
+        <div>{{ item.description }}</div>
+      </div>
+    </div>
+  </div>
+</div>

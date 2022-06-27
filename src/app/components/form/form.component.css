@@ -1,0 +1,13 @@
+small {
+  color: red;
+}
+
+#dashboard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#dashboard .category {
+  flex-basis: 0;
+  flex-grow: 1;
+}

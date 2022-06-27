@@ -1,0 +1,25 @@
+.category {
+  max-width: 500px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+.content-list {
+  min-height: 80px;
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+}
+#title {
+  margin-inline-end: 10px;
+}
+.green {
+  background-color: rgba(142, 223, 21, 0.3);
+}
+.blue {
+  background-color: rgba(43, 152, 241, 0.3);
+}
+.yellow {
+  background-color: rgba(243, 243, 7, 0.4);
+}
